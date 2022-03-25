@@ -5,7 +5,7 @@ metadata:
   name: demo-applicaiton
   namespace: argocd
 spec:
-  project: argocd
+  project: deployments
   source:
     repoURL: https://github.com/justinzamora02/gitops.git
     targetRevision: HEAD
