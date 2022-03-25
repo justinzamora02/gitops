@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: testing
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: testing
+  namespace: argocd
+spec:
+  project: deployments
+  source:
+    repoURL: https://github.com/justinzamora02/gitops.git
+    targetRevision: HEAD
+    path: deployments/overlays/local/applications
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
