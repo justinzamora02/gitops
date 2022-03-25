@@ -1,3 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: deployments
+  namespace: argocd
+spec:
+  description: Project Argocd locate, lock in argocd namespace
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
 ---      
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -5,7 +21,7 @@ metadata:
   name: deployments
   namespace: argocd
 spec:
-  project: argocd
+  project: deployments
   source:
     repoURL: https://github.com/justinzamora02/gitops.git
     targetRevision: HEAD
