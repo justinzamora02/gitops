@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/justinzamora02/gitops.git
     targetRevision: HEAD
-    path: postgresql/helm_base
+    path: postgresql/overlays/local
     plugin:
       name: kustomized-helm
   destination:
