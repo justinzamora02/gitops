@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  deploy
+  labels: &labels
+    app: demo-app-api
+spec:
+  selector:
+    matchLabels: *labels
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+      - name: demo-app
+        image: justinzamora02/nodejs-demo-application
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi
+        livenessProbe: &probe
+          httpGet:
+            port: http-web-api
+            path: /healthz
+          timeoutSeconds: 5
+          successThreshold: 1
+          periodSeconds: 5
+        readinessProbe: *probe
+        envFrom:
+        - configMapRef:
+            name: cm
+        ports:
+        - containerPort: 3000
+          name: http-web-api
+      restartPolicy: Always
