@@ -9,7 +9,7 @@ spec:
   sourceRepos:
     - '*'
   destinations:
-    - namespace: 'argocd'
+    - namespace: '*'
       server: '*'
   clusterResourceWhitelist:
     - group: '*'
