@@ -1,0 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: tools
+  namespace: argocd
+spec:
+  description: Project Argocd locate, lock in argocd namespace
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: 'argocd'
+      server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---      
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tools
+  namespace: argocd
+spec:
+  project: tools
+  source:
+    repoURL: https://github.com/justinzamora02/gitops.git
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tools
