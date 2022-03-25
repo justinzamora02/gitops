@@ -10,3 +10,4 @@ images:
   newTag: a3548df915c412c753d953628c422893b3e6dafb
 resources:
   - ../../base
+  - ../../db

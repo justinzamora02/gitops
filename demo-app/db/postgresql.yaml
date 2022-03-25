@@ -1,0 +1,21 @@
+---      
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-database
+  namespace: argocd
+spec:
+  project: deployments
+  source:
+    repoURL: https://github.com/justinzamora02/gitops.git
+    targetRevision: HEAD
+    path: postgresql/helm_base
+    plugin:
+      name: kustomized-helm
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      allowEmpty: true
