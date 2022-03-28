@@ -1,0 +1,37 @@
+name: Deployment
+on:
+  workflow_dispatch:
+    inputs:
+      application:
+        required: true
+        type: string
+        description: Application name
+      environment:
+        required: true
+        type: string
+        description: Kustomize overlay
+      image_name:
+        required: true
+        type: string
+        description: Docker image name to update
+      image_tag:
+        required: true
+        type: string
+        description: Image tag to deploy
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - uses: imranismail/setup-kustomize@v1
+
+      - name: Update image tag
+        env:
+          APP: ${{ github.event.inputs.application }}
+          ENV: ${{ github.event.inputs.environment }}
+          IMAGE_NAME: ${{ github.event.inputs.image_name }}
+          IMAGE_TAG: ${{ github.event.inputs.image_tag }}
+        run: |
+          ./scripts/update-image-tags.sh $APP $ENV $IMAGE_NAME $IMAGE_TAG
