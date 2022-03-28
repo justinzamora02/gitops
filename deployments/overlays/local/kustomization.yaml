@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - testing.yaml
+  - ../../../application/overlays/testing
 patchesStrategicMerge:
   - argocd.yaml
   - deployments.yaml
