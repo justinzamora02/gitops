@@ -27,6 +27,8 @@ jobs:
 
       - uses: imranismail/setup-kustomize@v1
 
+      - uses: fregante/setup-git-user@v1
+
       - name: Update image tag
         env:
           APP: ${{ github.event.inputs.application }}
