@@ -1,4 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-bases:
-  - ../../helm_base
+resources:
+  - ../../base
+images:
+- name: docker.io/bitnami/postgresql
+  newTag: 11.13.0-debian-10-r40

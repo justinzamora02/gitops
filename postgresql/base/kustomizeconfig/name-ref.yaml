@@ -1,0 +1,8 @@
+nameReference:
+- kind: SealedSecret
+  version: v1alpha1
+  fieldSpecs:
+  - path: spec/template/metadata/name
+    kind: SealedSecret
+  - path: spec/template/spec/containers/envFrom/secretRef/name
+    kind: StatefulSet
