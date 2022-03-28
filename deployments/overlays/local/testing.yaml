@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/justinzamora02/gitops.git
     targetRevision: HEAD
-    path: common/base/overlays/testing
+    path: common/overlays/testing
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
