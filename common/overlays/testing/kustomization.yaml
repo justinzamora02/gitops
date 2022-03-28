@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../../../application/overlays/testing
+namespace: testing
+patches:
+  - target:
+      kind: Namespace
+      name: namespace
+      version: v1
+    patch: |
+      - op: replace
+        path: /metadata/name
+        value: testing
