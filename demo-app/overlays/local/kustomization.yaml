@@ -7,7 +7,7 @@ configMapGenerator:
   name: cm
 images:
 - name: justinzamora02/nodejs-demo-application
-  newTag: 5d3e82438bf039dde1210eb7a2cb7d8995c42680
+  newTag: 025b21ae22bfb87788438f546ca4b8d51ba7c42d
 resources:
 - ../../base
 - ../../db
