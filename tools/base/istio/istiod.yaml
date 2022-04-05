@@ -1,0 +1,18 @@
+---      
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istiod
+  namespace: argocd
+spec:
+  project: tools
+  source:
+    repoURL: https://github.com/justinzamora02/gitops.git
+    targetRevision: 1.13.2
+  chart: istiod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      allowEmpty: true
