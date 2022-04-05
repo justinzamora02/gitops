@@ -7,7 +7,7 @@ metadata:
 spec:
   project: tools
   source:
-    repoURL: https://github.com/justinzamora02/gitops.git
+    repoURL: https://istio-release.storage.googleapis.com/charts
     targetRevision: 1.13.2
     chart: base
   destination:
