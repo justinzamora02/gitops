@@ -4,3 +4,4 @@ resources:
 - mtls.yaml
 - namespace.yaml
 - network-policies
+- sidecar.yaml
