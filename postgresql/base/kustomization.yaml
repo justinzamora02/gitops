@@ -11,7 +11,7 @@ commonLabels:
   app.kubernetes.io/instance: postgresql
   app.kubernetes.io/name: postgresql
 configMapGenerator:
-  - name: cm
+  - name: db-cm
     envs:
       - .env
 namePrefix: psql-

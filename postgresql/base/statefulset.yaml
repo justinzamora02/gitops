@@ -17,7 +17,7 @@ spec:
           containerPort: 5432
         envFrom:
         - configMapRef:
-            name: cm
+            name: db-cm
         - secretRef:
             name: secrets
         resources:
