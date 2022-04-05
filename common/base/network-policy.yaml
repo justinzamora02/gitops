@@ -1,9 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: default-allow-coredns
+  name: default
 spec:
   egress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: istio-system
   - ports:
     - protocol: UDP
       port: 53
@@ -14,3 +18,4 @@ spec:
   podSelector: {}
   policyTypes:
   - Egress
+  - Ingress
