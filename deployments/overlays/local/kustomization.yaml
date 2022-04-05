@@ -4,5 +4,5 @@ resources:
   - ../../base
 patchesStrategicMerge:
   - argocd.yaml
-  # - deployments.yaml
+  - deployments.yaml
   - tools.yaml
