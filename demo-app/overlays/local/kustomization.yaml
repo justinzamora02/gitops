@@ -1,13 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-configMapGenerator:
-- behavior: merge
-  envs:
-  - .env
-  name: cm
-images:
-- name: justinzamora02/nodejs-demo-application
-  newTag: f7b45c9ff2437a940d0502dc48a788b4e1ac1acb
+# configMapGenerator:
+# - behavior: merge
+#   envs:
+#   - .env
+#   name: cm
+# images:
+# - name: justinzamora02/nodejs-demo-application
+#   newTag: f7b45c9ff2437a940d0502dc48a788b4e1ac1acb
 resources:
-- ../../base
+# - ../../base
 - ../../db
+patchesStrategicMerge:
+  - secrets-test.yaml
