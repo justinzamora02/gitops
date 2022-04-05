@@ -2,13 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: demo-applicaiton
+  name: demo-application
   namespace: argocd
 spec:
   project: deployments
   source:
     repoURL: https://github.com/justinzamora02/gitops.git
     targetRevision: HEAD
+    path: demo-app/overlays/local
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

@@ -4,6 +4,7 @@ resources:
   - ../../base
   - testing.yaml
   - repo-istio.yaml
+  - testing
 patchesStrategicMerge:
   - argocd.yaml
   - deployments.yaml
