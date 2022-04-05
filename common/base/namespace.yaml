@@ -4,3 +4,5 @@ metadata:
   name: namespace
   annotations:
     argocd.argoproj.io/hook: PreSync
+  labels:
+    istio-injection: enabled
