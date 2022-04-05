@@ -1,14 +1,14 @@
+namespace: testing
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
-namespace: testing
+- ../../base
 patches:
-  - target:
-      kind: Namespace
-      name: namespace
-      version: v1
-    patch: |
-      - op: replace
-        path: /metadata/name
-        value: testing
+- patch: |-
+    - op: replace
+      path: /metadata/name
+      value: testing
+  target:
+    name: namespace
+    kind: Namespace
+    version: v1
