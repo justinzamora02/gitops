@@ -8,6 +8,8 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: istio-system
+    ports:
+    - port: 15012
   - to:
     - namespaceSelector:
         matchLabels:
