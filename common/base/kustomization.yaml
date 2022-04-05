@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - mtls.yaml
 - namespace.yaml
-# - network-policy.yaml
+- network-policy.yaml
 - sidecar.yaml
