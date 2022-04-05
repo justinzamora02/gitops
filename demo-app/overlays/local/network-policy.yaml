@@ -6,7 +6,7 @@ metadata:
 spec:
   ingress:
   - from:
-    - namespaceSelector:
+    - podSelector:
         matchLabels:
           app.kubernetes.io/instance: demo-local
     ports:
@@ -24,7 +24,7 @@ metadata:
 spec:
   egress:
   - to:
-    - namespaceSelector:
+    - podSelector:
         matchLabels:
           app.kubernetes.io/name: postgresql
     ports:
