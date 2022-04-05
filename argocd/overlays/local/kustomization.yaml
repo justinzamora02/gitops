@@ -4,5 +4,4 @@ patchesStrategicMerge:
   - argocd-cm.yaml
 resources:
   - ../../base
-  - bitnami-chart.yaml
 namespace: argocd
