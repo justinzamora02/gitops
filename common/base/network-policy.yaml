@@ -12,6 +12,9 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: kube-system
+  - to:
+    - ports:
+      - port: 53
   podSelector: {}
   policyTypes:
   - Egress
