@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/justinzamora02/gitops.git
     targetRevision: 1.13.2
-  chart: istiod
+    chart: istiod
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
