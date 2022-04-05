@@ -22,7 +22,7 @@ spec:
         - configMapRef:
             name: cm
         - secretRef:
-            name: db-secret
+            name: demo-app-secret
         resources:
           limits:
             cpu: 200m
