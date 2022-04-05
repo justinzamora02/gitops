@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - default-deny-all.yaml
 - allow-coredns.yaml
+- allow-sidecar.yaml
