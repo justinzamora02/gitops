@@ -2,11 +2,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - https://github.com/prometheus-operator/prometheus-operator/releases/download/v0.55.1/bundle.yaml
-namespace: observability
-patches:
-  - target:
-      kind: ClusterRoleBinding
-    patch: |
-      - op: replace
-        path: subjects/namespace
-        value: observability
+transformers:
+  - namespace-transformer.yaml
