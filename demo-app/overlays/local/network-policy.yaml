@@ -1,0 +1,36 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: psql
+spec:
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          app.kubernetes.io/instance: demo-local
+    ports:
+    - port: 5432
+  podSelector: 
+    matchLabels:
+      app.kubernetes.io/name: postgresql
+  policyTypes:
+  - Ingress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: app-client
+spec:
+  ingress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          app.kubernetes.io/name: postgresql
+    ports:
+    - port: 5432
+  podSelector: 
+    matchLabels:
+      app.kubernetes.io/instance: demo-local
+  policyTypes:
+  - Ingress
