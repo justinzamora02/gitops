@@ -9,3 +9,4 @@ spec:
     - hosts:
         - "./*"
         - "istio-system/*"
+        - "kube-system/*"
