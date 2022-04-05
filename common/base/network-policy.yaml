@@ -12,7 +12,7 @@ spec:
     - namespaceSelector:
         matchLabels:
           name: kube-system
-  - ports:
+    ports:
     - port: 53
       protocol: UDP
   podSelector: {}
