@@ -22,7 +22,7 @@ kind: NetworkPolicy
 metadata:
   name: app-client
 spec:
-  ingress:
+  egress:
   - to:
     - namespaceSelector:
         matchLabels:
@@ -33,4 +33,4 @@ spec:
     matchLabels:
       app.kubernetes.io/instance: demo-local
   policyTypes:
-  - Ingress
+  - Egress
