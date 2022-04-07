@@ -52,4 +52,10 @@ spec:
             readOnlyRootFilesystem: true
             runAsNonRoot: true
             runAsUser: 1001
+          volumeMounts:
+          - name: yarn-cache
+            mountPath: "~/.cache/yarn"
       restartPolicy: Never
+  volumes:
+  - name: yarn-cache
+    emptyDir: {}
