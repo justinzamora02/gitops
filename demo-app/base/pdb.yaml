@@ -7,3 +7,4 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: demo-app
+      app.kubernetes.io/component: backend
