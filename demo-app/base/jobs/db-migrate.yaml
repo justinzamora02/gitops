@@ -21,9 +21,6 @@ spec:
               name: cm
           - secretRef:
               name: demo-app-secret
-          env:  
-          - name: YARN_CACHE_FOLDER
-            value: /dev/shm/yarn_cache
           command:
             - /bin/sh
             - -c
@@ -52,13 +49,7 @@ spec:
               memory: 128M
           securityContext:
             allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
+            # readOnlyRootFilesystem: true
             runAsNonRoot: true
             runAsUser: 1001
-          volumeMounts:
-          - name: yarn-cache
-            mountPath: "~/.yarn"
       restartPolicy: Never
-      volumes:
-      - name: yarn-cache
-        emptyDir: {}
