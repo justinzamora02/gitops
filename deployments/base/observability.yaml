@@ -20,6 +20,8 @@ kind: Application
 metadata:
   name: observability
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: observability
   source:

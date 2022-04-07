@@ -20,6 +20,8 @@ kind: Application
 metadata:
   name: tools
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: tools
   source:
