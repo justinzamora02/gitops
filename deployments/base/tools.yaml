@@ -30,5 +30,4 @@ spec:
     namespace: tools
   syncPolicy:
     automated:
-      prune: true
       allowEmpty: true
