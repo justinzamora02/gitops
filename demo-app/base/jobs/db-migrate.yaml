@@ -56,6 +56,6 @@ spec:
           - name: yarn-cache
             mountPath: "~/.cache/yarn"
       restartPolicy: Never
-  volumes:
-  - name: yarn-cache
-    emptyDir: {}
+      volumes:
+      - name: yarn-cache
+        emptyDir: {}
