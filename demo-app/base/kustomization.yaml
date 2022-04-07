@@ -6,6 +6,7 @@ resources:
 - service-account.yaml
 - service.yaml
 - secrets.yaml
+- jobs/db-migrate.yaml
 buildMetadata: [managedByLabel, originAnnotations, transformerAnnotations]
 commonLabels:
   app.kubernetes.io/component: backend

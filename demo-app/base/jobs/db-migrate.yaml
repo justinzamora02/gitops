@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-migration
+  labels: &labels
+    app.kubernetes.io/component: job
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+spec:
+  activeDeadlineSeconds: 300
+  backoffLimit: 2
+  template:
+    spec:
+      containers:
+        - name: client
+          image: justinzamora02/nodejs-demo-application
+          envFrom:
+          - configMapRef:
+              name: cm
+          - secretRef:
+              name: demo-app-secret
+          command:
+            - /bin/sh
+            - -c
+          args:
+          - |
+            function cleanup() {
+              exit_code=$?
+              curl --max-time 2 -s -f -XPOST http://127.0.0.1:15020/quitquitquit   # Exit envoy sidecar
+
+              exit $exit_code
+            }
+            trap 'cleanup' EXIT
+
+            # Wait for db to be ready
+            while ! nc -z localhost 5432 ; do sleep 1; done;
+            echo "Database ready"
+
+            # Test migration script to db sidecar
+            yarn migration:up
+          env:
+            - name: NEAT_API_SECRET_HASH
+              value: $(NEAT_API_SECRET_HASH)
+          resources:
+            limits:
+              cpu: 1
+              memory: 1G
+            requests:
+              cpu: 0.1
+              memory: 128M
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1001
+      restartPolicy: Never
