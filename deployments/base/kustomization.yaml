@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - argocd.yaml
   - deployments.yaml
-  - observability.yaml
+  # - observability.yaml
   - tools.yaml
