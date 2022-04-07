@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - https://raw.githubusercontent.com/argoproj/argo-cd/release-2.3/manifests/install.yaml
+patchesStrategicMerge:
+  - argocd-cm.yaml
