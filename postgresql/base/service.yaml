@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-headless
+  name: psql-svc-headless
   labels:
     service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
 spec:
@@ -16,7 +16,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc
+  name: psql-svc
 spec:
   type: ClusterIP
   ports:

@@ -14,6 +14,5 @@ configMapGenerator:
   - name: db-cm
     envs:
       - .env
-namePrefix: psql-
 configurations:
   - kustomizeconfig/name-ref.yaml
