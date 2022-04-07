@@ -4,6 +4,9 @@ metadata:
   name: deploy
   labels: &labels
     app: demo-app-api
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/hook: Sync
 spec:
   selector:
     matchLabels: *labels
