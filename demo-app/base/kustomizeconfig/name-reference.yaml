@@ -3,3 +3,5 @@ nameReference:
   fieldSpecs:
   - kind: Deployment
     path: spec/template/spec/containers/envFrom/secretRef/name
+  - kind: Job
+    path: spec/template/spec/containers/envFrom/secretRef/name
