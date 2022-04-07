@@ -6,5 +6,4 @@ spec:
   minAvailable: "80%"
   selector:
     matchLabels:
-      app.kubernetes.io/name: demo-app
-      app.kubernetes.io/component: backend
+      app: demo-app-api
