@@ -5,13 +5,13 @@ resources:
 - ../../db
 - network-policy.yaml
 configMapGenerator:
-- name: cm
-  behavior: merge
+- behavior: merge
   envs:
   - .env
+  name: cm
 images:
 - name: justinzamora02/nodejs-demo-application
-  newTag: f7b45c9ff2437a940d0502dc48a788b4e1ac1acb
+  newTag: 6ce7490b32a58840abd1fe0de76840a2e9d7a667
 patchesStrategicMerge:
 - secrets-test.yaml
 - secrets.yaml
