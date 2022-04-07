@@ -1,0 +1,11 @@
+source:
+  kind: Service
+  name: psql-svc
+targets:
+  - select:
+      name: db-migration
+      kind: Job
+    fieldPaths:
+    - spec.template.spec.containers.[name=client].env.[name=DATABASE_HOST].value
+    options:
+      create: true

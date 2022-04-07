@@ -13,5 +13,7 @@ images:
 - name: justinzamora02/nodejs-demo-application
   newTag: 6ce7490b32a58840abd1fe0de76840a2e9d7a667
 patchesStrategicMerge:
-- secrets-test.yaml
+- psql-secrets.yaml
 - secrets.yaml
+replacements:
+  - path: replacements/psql-sts-svc.yaml

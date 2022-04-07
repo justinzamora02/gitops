@@ -35,7 +35,7 @@ spec:
             trap 'cleanup' EXIT
 
             # Wait for db to be ready
-            while ! nc -z localhost 5432 ; do sleep 1; done;
+            while ! nc -z $DATABASE_HOST 5432 ; do sleep 1; done;
             echo "Database ready"
 
             # Test migration script to db sidecar
