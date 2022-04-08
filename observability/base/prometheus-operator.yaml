@@ -2,19 +2,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus-operator
+  name: prometheus-operator-crds
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: tools
   source:
-    repoURL: https://github.com/justinzamora02/gitops.git
-    targetRevision: HEAD
-    path: observability/base/prometheus-operator
+    repoURL: https://github.com/prometheus-community/helm-charts.git
+    targetRevision: kube-prometheus-stack-31.0.0
+    path: charts/kube-prometheus-stack/crds/
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: observability
   syncPolicy:
     automated:
       allowEmpty: true
+    syncOptions:
+    - Replace=true
