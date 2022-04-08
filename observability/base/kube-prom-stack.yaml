@@ -1,0 +1,25 @@
+---      
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-prom-stack
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: tools
+  source:
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 31.0.0
+    chart: kube-prometheus-stack
+    helm:
+      skipCrds: true
+      parameters:
+      - name: 'namespaceOverride'
+        value: observability
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: observability
+  syncPolicy:
+    automated:
+      allowEmpty: true
