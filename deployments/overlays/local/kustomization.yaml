@@ -4,6 +4,7 @@ resources:
   - ../../base
   - testing.yaml
   - repo-istio.yaml
+  - repo-prometheus-community.yaml
   - testing
 patchesStrategicMerge:
   - argocd.yaml

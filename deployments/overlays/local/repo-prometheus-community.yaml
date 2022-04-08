@@ -1,0 +1,24 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: prometheus-community-repo
+  namespace: argocd
+spec:
+  encryptedData:
+    name: AgBkmCzwLOycHGb+8GKPKVsAaPTTcmISBy92ib7DZXR7P+QS1e8zM1C1u8e3vcRhAgefcPGyQ9/ZpmaQbBhZ5BsiE8yviQQtfE+PHLvspdu6a6ysDEA1arbgC+jlo0xtIRUfF3XfpGz8uEEEzGSfzAyBAeXDhhdFcynN8GwLo8SVcAbWO8ac6b35i04HcsToq1C7cgYsTRMNhRb5IDE24ohBheKaFwyvpf+/ua7BjpUX0r6ckxQWZ2dcnqbBwuSligRinE7nWNU8Xd0wpwqmn88IpQBTv5NOVHLN0gIdvH0a8+BCYiARhDb6Qg2UtfjglSif+TYQ0eLE0NQDBQANiTX6EAg0XdzPolG1y2Fx6yM5Zz8hVXv9Hi3BYTd9qtk/KwVV3qFLlPFEkYu7yDWYRbFPo4/6Q4igypA/7OSn9Qbq0lF0jTaTC2AWLorkxNBX10Wm1dlgPPzEfMwPuY4g4bc/EfqREb/7gbW+fiWTIoaoLnhSvuol2nDjqNBApO2YcaGMiGOBDpCFytQ4EDCth0XvaX0oSbExOjJmWEEgZkM0QdswBUS4TuTk7t0dB+wSnn9JKGBrX6rPOCyRP6OnMpFG9p5wsoHVPx/1rPBJurlZVVz2rMdmzbNVs4X6DfLmPnqdQWO+CUUW6G6ZZL6XlXgXbQktCMnv9StpcUQVoq48BlKsyqUXNDTxyAqEpCaAtoovZpt6CVlv1o2eEiD45FK8y+efFg==
+    type: AgCBHypyJQc9jz1tthelFy2SqorXL6eeW0YketlU/vbpTFwyUWPyGBiRROn8EQz4Vp5qPKwtBX6wXda+0gNZDYomOwPaWd4U+1Vt1k6Z16/uz+1xISh8O4Mo74My3LV7xX//gny0bL8y7Q50EFWMEczJB3eZDWqNFyXV7oBLSNb0JADWJSjbFEOv4wejzlWtVAZ111YIyy3QZATarcQE09YsHadGgrFvG6KaKflEFR5lzaVfQz/PrtPh3H+IagvMDo2+2gh1fvzEo/Nx+aPimCmlZDOUdtDM+e+HS55o1fzCqOal812HFVgyWogRPoqCB1ia6oFBTsXYpvzZNTWp5frwlIVeqCrN0b1NaFDuCkba5ji8tYom/pFLbKMkwNv3JiAsF0CjQ/kx08OLrtIFwWOKobjnMW/vtfVCGLUWc/E9v4RHUUVXs0yiSq8+igAj1pkhCgrTrj+gL+Jc+1CXYvpz/Zd9hHvlFosBko7uQ7TopjQ5L1WgzfALDpv3ptzwK4cC9FZEz1k/1x6BUvsWVM1vkic53bnFv/TVboxjSN3JOjL/tH1dXDnix2wl0Q0gLVEj+wQt/Suf07sb3Y9zfY30pWanerL9dDtcImEjUmsI4jf45hAy1iSNV242va50nneiK0RUv+UXpunMIr4Jmlras/RmdomY1jOhOmyFaBP0ynwSjdUvw5bsBrGECTGFjf6XfeV/
+    url: AgAGChk9Y+XJB0taymoQchQMNkp7TdSwRBQYTqsODTamSpeRtw0Z7W1qjQDxZmrWVG35QpXhpup/+bjfIStPGxFjaZ/fjYkHuCNOCOrCKJ2gHEkyOPPUUCENAIsNUz8oqtTKP4d+oOtde79zZQkBVIFkorQPdYOyiHR9claQUQ+UrjEcZNfiQ2we1DMB9YJ9tGxWWNLH+X+XCwBaHCJTUsCen7UX1xFVjdXxM9oMfzJ9OSuzWAIbh/BxtxtIcYj0jUrqUB7xiD+FIDFa2xsF+U1A8pD3rfNF+gBoWWU+BWpLllewCNN65HFfq8ZVN0YECuRUm/fKf8tYOqWZaSXKFWeWB/iX9QSO/YP+M2AN6XhbH+7rcZPwztFLu1adkiq2Q1cqLi60ENb2NLl7V97aUsgEzAh2RmqVPIumbn/yBynoLowVtyAqNs4EWGDGY7bQOU26e5tK77ihTE2B29u6TJ4XcJ8kAmfd+Erdk809ULYdpcHPHlrW1CFsL/Xcq/hSqpnYIxKxbPkKUmR90Ehp9kxNIOYVrPpiEWyFkWOmUI1ISWs2vhizxp8eKx9Hn5PVqmofeCXJOzJkW+tNTrcmhnX3K/8mVTnQSCt2CG3RRsRh3zd35MaTI+LsuHRQCzoC3qH4X24vEjKTvLhddrbsp474Xol9BpJXEqJPQAI2BVmxkrw/O/4+nTdv1xFwVv0GkRIs/KSJhOEzDpb/xDZ1fT6k2lGaqWf0ndi+n2o9+pohHntFPeJK4ytnA9HcNCfZLg7RiQ==
+  template:
+    data: null
+    metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+      creationTimestamp: null
+      labels:
+        argocd.argoproj.io/secret-type: repository
+      name: prometheus-community-repo
+      namespace: argocd
+
