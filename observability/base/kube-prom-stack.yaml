@@ -14,9 +14,58 @@ spec:
     chart: kube-prometheus-stack
     helm:
       skipCrds: true
-      parameters:
-      - name: 'namespaceOverride'
-        value: observability
+      values: |
+        nameOverride: observability
+        alertmanager:
+          podDisruptionBudget:
+            enabled: true
+
+        grafana:
+          enabled: true
+          defaultDashboardsEnabled: true
+
+        kubeApiServer:
+          enabled: false
+
+        kubelet:
+          enabled: false
+
+        kubeControllerManager:
+          enabled: false
+
+        coreDns:
+          enabled: true
+          service:
+            selector:
+              k8s-app: kube-dns
+
+        kubeDns:
+          enabled: false
+
+        kubeEtcd:
+          enabled: false
+
+        kubeScheduler:
+          enabled: false
+
+        kubeProxy:
+          enabled: false
+
+        kubeStateMetrics:
+          enabled: true
+
+        nodeExporter:
+          enabled: true
+
+        prometheusOperator:
+          enabled: true
+          tls:
+            enabled: false
+          admissionWebhooks:
+            enabled: false
+
+        prometheus:
+          enabled: true
   destination:
     server: https://kubernetes.default.svc
     namespace: observability
