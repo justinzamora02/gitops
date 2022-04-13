@@ -11,7 +11,7 @@ configMapGenerator:
   name: cm
 images:
 - name: justinzamora02/nodejs-demo-application
-  newTag: d1c4ee80b108dd0f66a54a2f6d4d1b761470e6cf
+  newTag: 8746150cebdb9799c6753e8b66049f3674a3d243
 patchesStrategicMerge:
 - psql-secrets.yaml
 - secrets.yaml
